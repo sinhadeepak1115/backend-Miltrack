@@ -17,6 +17,9 @@ app.use("/api/user", userRoute_1.default);
 app.use("/api/base", baseRoute_1.default);
 app.use("/api/asset", assetRoute_1.default);
 app.use("/api/logs", logRoutes_1.default);
+app.get("/", (req, res) => {
+    res.send("Hello from backend");
+});
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
