@@ -16,6 +16,10 @@ app.use("/api/base", baseRoutes);
 app.use("/api/asset", assetRoutes);
 app.use("/api/logs", logRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Hello from backend");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
