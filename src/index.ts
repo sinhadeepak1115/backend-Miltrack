@@ -6,9 +6,14 @@ import assetRoutes from "./routes/assetRoute";
 import logRoutes from "./routes/logRoutes";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://frontend-miltrack.vercel.app", "http://localhost:3000"],
+    credentials: true,
+  }),
+);
 
 app.use(express.json());
 app.use("/api/user", userRoutes);
